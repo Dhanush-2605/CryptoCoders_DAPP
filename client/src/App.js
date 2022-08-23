@@ -12,6 +12,8 @@ const App = () => {
   const [mintText, setMintText] = useState("");
   const [coders, setCoders] = useState([]);
 
+  console.log(CryptoCoder);
+
   const mint = () => {
     contract.methods.mint(mintText).send({ from: account }, (error) => {
       console.log("Successfully Minted");
@@ -60,50 +62,53 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Header account={account} />
-
-      <div className="wrapper">
-        <div className="img">
-          <img
-            src="https://avatars.dicebear.com/api/pixel-art/naz.svg"
-            alt="icon"
-            width="72"
-          />
-        </div>
-        <div>
-          <h1>Crypto Coders</h1>
-        </div>
-        <div className="text">
-          <p>
-            These are some of the most highly motivated coders in the world! We
-            are here to learn coding and apply it to the betterment of
-            humanity,We are innovators,inventors and creators
-          </p>
-        </div>
-        <div className="form">
-          <input
-            type="text"
-            onChange={(e) => setMintText(e.target.value)}
-            placeholder="e.g.Dhanush"
-            value={mintText}
-          ></input>
-          <button onClick={mint}>Mint</button>
-        </div>
-        <div className="Coders">
-          {coders.map((coder, key) => (
-            <div key={key} className="Coder">
-              <img
-                src={`https://avatars.dicebear.com/api/pixel-art/${coder}.svg`}
-                width="100"
-              />
-              <div>{coder}</div>
-            </div>
-          ))}
+    <div className="main">
+       <Header account={account} />
+    
+      <div className="container">
+   
+        <div className="wrapper">
+          <div className="img">
+            <img
+              src="https://avatars.dicebear.com/api/pixel-art/naz.svg"
+              alt="icon"
+              width="72"
+            />
+          </div>
+          <div>
+            <h1>Crypto Coders</h1>
+          </div>
+          <div className="text">
+            <p>
+              These are some of the most highly motivated coders in the world!
+              We are here to learn coding and apply it to the betterment of
+              humanity,We are innovators,inventors and creators
+            </p>
+          </div>
+          <div className="form">
+            <input
+              type="text"
+              onChange={(e) => setMintText(e.target.value)}
+              placeholder="e.g.Dhanush"
+              value={mintText}
+            ></input>
+            <button onClick={mint}>Mint</button>
+          </div>
+          <div className="Coders">
+            {coders.map((coder, key) => (
+              <div key={key} className="Coder">
+                <img
+                  src={`https://avatars.dicebear.com/api/pixel-art/${coder}.svg`}
+                  width="100"
+                />
+                <div style={{ marginTop: "10px" }}>{coder}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
-    // </div>
+
   );
 };
 

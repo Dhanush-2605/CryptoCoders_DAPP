@@ -7,7 +7,9 @@ const Header = ({ account }) => {
         <h1>Crypto Coders</h1>
       </div>
       <div className="right">
+      <div>
         <span>{account}</span>
+        </div>
       </div>
 
      

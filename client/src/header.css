@@ -1,20 +1,21 @@
-.Div{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
+.Div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
 
+.left {
+  justify-content: flex-start;
+  margin-left: 60px;
+  /* background-color: rebeccapurple; */
+  /* background-image: linear-gradient(to right top, #1c61cb, #114b99, #0f356a, #0e203e, #030816);   */
+
+  width: 100%;
+  flex: 3;
 }
-.left{
-    justify-content: flex-start;
-    /* background-color: rebeccapurple; */
-    width: 100%;
-    flex: 1;
-}
-.right{
-    width: 100%;
-    flex: 1;
-    justify-content: flex-end;
+.right {
+  flex: 1;
 }
